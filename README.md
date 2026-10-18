@@ -1,7 +1,5 @@
 # Assignment 4 - Home Theater Facade
 
-Course: Software Design Patterns (ShP-2216), Astana IT University.
-
 This is Option B from Assignment 4. It demonstrates the Facade structural design pattern in Java 17. A client can start and end a movie without knowing the setup sequence for five separate theater devices.
 
 ## What the program does
