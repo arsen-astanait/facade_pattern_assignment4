@@ -1,0 +1,40 @@
+@startuml
+skinparam monochrome true
+skinparam classAttributeIconSize 0
+class Main <<Client>> { +main(args: String[]): void }
+class HomeTheaterFacade <<Facade>> {
+  -amplifier: Amplifier
+  -dvdPlayer: DvdPlayer
+  -projector: Projector
+  -screen: Screen
+  -lights: RoomLights
+  -movieInProgress: boolean
+  +watchMovie(title: String): String
+  +endMovie(): String
+}
+class Amplifier { +powerOn(): void
+ +selectDvdInput(): void
+ +setVolume(level: int): void
+ +powerOff(): void }
+class DvdPlayer { +powerOn(): void
+ +insertDisc(title: String): void
+ +play(): void
+ +stop(): void
+ +ejectDisc(): void
+ +powerOff(): void }
+class Projector { +powerOn(): void
+ +selectDvdInput(): void
+ +enableWidescreenMode(): void
+ +powerOff(): void }
+class Screen { +lower(): void
+ +raise(): void }
+class RoomLights { +setBrightness(percent: int): void }
+class HomeTheaterException
+Main ..> HomeTheaterFacade : uses
+HomeTheaterFacade *-- Amplifier
+HomeTheaterFacade *-- DvdPlayer
+HomeTheaterFacade *-- Projector
+HomeTheaterFacade *-- Screen
+HomeTheaterFacade *-- RoomLights
+HomeTheaterFacade ..> HomeTheaterException : throws
+@enduml

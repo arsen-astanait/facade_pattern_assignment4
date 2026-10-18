@@ -1,0 +1,25 @@
+digraph HomeTheaterUML {
+  graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.24", ranksep="0.65", splines=polyline, fontname="Arial", fontsize=12];
+  node [shape=record, style="rounded,filled", color="#444444", fillcolor="white", fontname="Arial", fontsize=10.5, margin="0.13,0.08"];
+  edge [color="#555555", arrowsize=0.7, penwidth=1.1, fontname="Arial", fontsize=9];
+
+  Main [label="{Main (Client)|+ main(args): void}", fillcolor="#f8f8f8"];
+  Facade [label="{HomeTheaterFacade (Facade)|- movieInProgress: boolean|- amplifier: Amplifier\l- dvdPlayer: DvdPlayer\l- projector: Projector\l- screen: Screen\l- lights: RoomLights\l|+ watchMovie(title): String\l+ endMovie(): String\l}", fillcolor="#f5f5f5"];
+  Amplifier [label="{Amplifier|+ powerOn()\l+ selectDvdInput()\l+ setVolume(level)\l+ powerOff()\l}"];
+  DvdPlayer [label="{DvdPlayer|+ powerOn()\l+ insertDisc(title)\l+ play() / stop()\l+ ejectDisc() / powerOff()\l}"];
+  Projector [label="{Projector|+ powerOn()\l+ selectDvdInput()\l+ enableWidescreenMode()\l+ powerOff()\l}"];
+  Screen [label="{Screen|+ lower()\l+ raise()\l}"];
+  Lights [label="{RoomLights|+ setBrightness(percent)\l+ getBrightnessPercent()\l}"];
+  Error [label="{HomeTheaterException|+ message\l+ cause\l}"];
+
+  Main -> Facade [style=dashed, label="uses", arrowhead=vee];
+  Facade -> Amplifier [arrowhead=vee];
+  Facade -> DvdPlayer [arrowhead=vee];
+  Facade -> Projector [arrowhead=vee];
+  Facade -> Screen [arrowhead=vee];
+  Facade -> Lights [arrowhead=vee];
+  Facade -> Error [style=dashed, label="throws", arrowhead=vee];
+
+  { rank=same; Amplifier; DvdPlayer; Projector; }
+  { rank=same; Screen; Lights; Error; }
+}
