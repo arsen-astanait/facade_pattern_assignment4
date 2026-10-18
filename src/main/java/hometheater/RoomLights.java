@@ -1,4 +1,4 @@
-package kz.aitu.theater;
+package hometheater;
 
 public class RoomLights {
     private int brightnessPercent = 100;

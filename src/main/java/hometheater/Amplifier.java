@@ -1,4 +1,4 @@
-package kz.aitu.theater;
+package hometheater;
 
 public class Amplifier {
     private boolean on;

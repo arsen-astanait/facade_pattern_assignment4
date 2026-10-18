@@ -1,4 +1,4 @@
-package kz.aitu.theater;
+package hometheater;
 
 public class Projector {
     private boolean on;

@@ -1,4 +1,4 @@
-package kz.aitu.theater;
+package hometheater;
 
 import java.util.Objects;
 

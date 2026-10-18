@@ -13,7 +13,7 @@ The subsystem classes keep their own state and validate operations. If an operat
 ## Folder structure
 
 ```text
-src/main/java/kz/aitu/theater/
+src/main/java/hometheater/        one short Java package
   Main.java                  client (uses only HomeTheaterFacade)
   HomeTheaterFacade.java     simplified API and coordination
   HomeTheaterException.java  errors at the facade boundary
@@ -22,18 +22,19 @@ src/main/java/kz/aitu/theater/
   Projector.java             input and widescreen state
   Screen.java                screen position
   RoomLights.java            brightness and validation
-src/test/java/kz/aitu/theater/
+src/test/java/hometheater/        tests in the same package
   HomeTheaterFacadeTest.java independent, zero-dependency unit tests
 diagrams/
   home-theater-uml.png       UML class diagram
   home-theater-uml.puml      editable PlantUML source
-  home-theater-uml.dot       Graphviz source
 run.sh / run.ps1             compile, run and test
 ```
 
+All Java files use the single package `hometheater`, with matching directories for main code and tests.
+
 ## Running the project (Java 17 or newer)
 
-Use IntelliJ IDEA to open this folder and run `kz.aitu.theater.Main`. Run `kz.aitu.theater.HomeTheaterFacadeTest` to check the nine unit tests.
+Use IntelliJ IDEA to open this folder and run `hometheater.Main`. Run `hometheater.HomeTheaterFacadeTest` to check the nine unit tests.
 
 Or use a terminal:
 

@@ -1,4 +1,4 @@
-package kz.aitu.theater;
+package hometheater;
 
 public class HomeTheaterException extends RuntimeException {
     public HomeTheaterException(String message) {

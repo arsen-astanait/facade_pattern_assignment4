@@ -5,8 +5,8 @@ $files = @(Get-ChildItem src -Recurse -Filter *.java | ForEach-Object FullName)
 javac --release 17 -d out $files
 if ($LASTEXITCODE -ne 0) { throw "Compilation failed" }
 Write-Host '--- Demo ---'
-java -cp out kz.aitu.theater.Main
+java -cp out hometheater.Main
 if ($LASTEXITCODE -ne 0) { throw "Demo failed" }
 Write-Host '--- Tests ---'
-java -cp out kz.aitu.theater.HomeTheaterFacadeTest
+java -cp out hometheater.HomeTheaterFacadeTest
 if ($LASTEXITCODE -ne 0) { throw "Tests failed" }
